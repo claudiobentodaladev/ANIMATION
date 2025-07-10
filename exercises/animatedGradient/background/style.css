@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    line-height: 95vh;
+    text-align: center;
+    text-shadow: 2px 2px 0px #00000089;
+    font-family: monospace;
+    font-weight: lighter;
+    color: white;
+}
+
+.boxGradient{
+    width: 100vw;
+    height: 100vh;
+
+    background-image: linear-gradient(to left, purple, orange, red );
+    background-size: 500% 100%;
+    animation: light 3s infinite alternate;
+}
+@keyframes light {
+    from{
+        background-position-x: 0%;
+    } to{
+        background-position-x: 100%;
+    }
+}
