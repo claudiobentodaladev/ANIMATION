@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: black;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+main{
+    &{
+        width: 300px;
+        padding: 2em;
+        text-align: center;
+        border-radius: 10px;
+        background-color: #1c1f2b;
+        
+        position: relative;
+    }
+    &::after,&::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+
+        height: 100%;
+        width: 100%;
+        padding: 3px;
+        border-radius: 10px;
+
+        z-index: -1;
+        
+        background-image: conic-gradient(from var(--angle),transparent 85%, var(--color) 0%);
+    }
+    &::before{
+        filter: blur(1.5em);
+    }
+    & h1{
+        text-transform: capitalize;
+        color: white;
+    }
+    & p{
+        color: #80848d;
+    }
+}
+main::after,main::before{
+    animation: luz 10s infinite linear;
+}
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@keyframes luz {
+    from{
+        --angle: 0deg;
+    } to {
+        --angle: 360deg;
+    }
+}
+@property --color{
+    syntax: "<color>";
+    initial-value: #12ff12;/* lack of dinamic color*/
+    inherits: false;
+}
+@keyframes cor {
+    0%{
+        --color: #0404ff;
+    } 49% {
+        --color: red;
+    } 50%{
+        --color: #12ff12;
+    } 100%{
+        --color: #ff00ff;
+    }
+
+}
