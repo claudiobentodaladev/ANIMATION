@@ -36,7 +36,7 @@ main{
 
         z-index: -1;
         
-        background-image: conic-gradient(from var(--angle),transparent 85%, var(--color) 0%);
+        background-image: conic-gradient(from var(--angle),transparent 85%, #ff00ff 0%);
     }
     &::before{
         filter: blur(1.5em);
@@ -63,21 +63,4 @@ main::after,main::before{
     } to {
         --angle: 360deg;
     }
-}
-@property --color{
-    syntax: "<color>";
-    initial-value: #12ff12;/* lack of dinamic color*/
-    inherits: false;
-}
-@keyframes cor {
-    0%{
-        --color: #0404ff;
-    } 49% {
-        --color: red;
-    } 50%{
-        --color: #12ff12;
-    } 100%{
-        --color: #ff00ff;
-    }
-
 }
