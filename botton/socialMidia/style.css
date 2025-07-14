@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+nav{
+    &{
+        border: 2px dotted black;    
+        display: flex;
+        justify-content: space-between;
+        column-gap: 3em;
+    }
+    & > a{
+        padding: 0;
+        border-radius: 50px;
+        text-decoration: none;
+        background-color: gray;
+        transition: .2s ease-out;
+    }
+    & > a#youtube{
+        background-image: linear-gradient(to right, red, #a70000,#5f0101);
+    }
+    & > a#instagram{
+        background-image: linear-gradient( 30deg, #fdcd70, #e84a61, #a931a0, #6216c1);
+    }
+    & > a#x{
+        background-color: black;
+    }
+    & > a#discord{
+        background-image: linear-gradient(to right, #6c9dfe, #214da3);
+    }
+    & > a img{
+        border-radius: 50%;
+        padding-bottom: -100px;
+        width: 50px;
+    }
+    & > a span{
+        color: white;
+        text-transform: uppercase;
+        font-size: 16px;
+        display: none; 
+        line-height: 5em;
+        text-align: center;
+    }
+}
+nav > a:hover{
+    &{
+        padding: 0 4em;
+    }
+    & img{
+        scale: 0;
+    }
+    & span{
+        display: block;
+        margin: -4em;
+    }
+}
