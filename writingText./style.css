@@ -22,31 +22,48 @@ h1{
             color: purple;
             position: relative;
         }
+        &::before{
+            content: '';
+            animation: words 20s infinite;
+        }
         &::after{
             margin-left: 2px;
             content: '';
-            border-right: 4px solid purple;
-            animation: cursor 1s infinite alternate;
+            border-left: 4px solid purple;
+            animation: cursor .5s infinite alternate, writing 7160ms steps(30) infinite ;
+            width: calc(100% + 10px);
+            height: 100%;
+            position: absolute;
+            right: -1%;
+
+            background-color: #212121;
+
         }
-        &::before{
-            content: '';
-            animation: writing 7s infinite;
-        }
+    }
+}
+
+@keyframes writing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    } 5%,20%,25%,40%,45%,60%,65%,80%,85%{
     }
 }
 
 @keyframes cursor {
     to{
-        border: none;
+        border-left: 4px solid #212121;
     }
 }
-@keyframes writing {
-    0%,32%{
+@keyframes words {
+    0%,20%{
         content: 'student';
-    } 33%,66%{
+    } 21%,40%{
         content: 'web developer';
-    } 67%,100%{
-        
-        content: 'graphic design';
+    } 41%,60%{
+        content: 'moblile developer';
+    } 61%,80%{
+        content: 'destop developer';
+    } 81%,100%{
+        content: 'multiplataform developer';
     }
 }
